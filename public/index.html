@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mock Media Server - API Documentation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 20px;
+      line-height: 1.6;
+      background-color: #f4f4f4;
+      border-radius: 10px;
+    }
+    h1, h2 {
+      color: #333;
+    }
+    code {
+      background: #eaeaea;
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+    ul {
+      margin-left: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>📦 Mock Media Server</h1>
+  <p>This API allows you to upload, view, and download media files. Below are the available endpoints and how to use them.</p>
+
+  <h2>🔗 API Endpoints</h2>
+  <ul>
+    <li><strong>GET <code>/</code></strong><br />
+      Returns this HTML file. This is your API documentation page.</li>
+
+    <li><strong>POST <code>/upload</code></strong><br />
+      Upload a media file using <code>multipart/form-data</code>.<br />
+      Required field: <code>file</code><br />
+      Optional field: <code>title</code><br />
+      Example: Use Postman or an HTML form with file upload support.</li>
+
+    <li><strong>GET <code>/media</code></strong><br />
+      Returns a JSON array of all uploaded media metadata. Each item contains:
+      <ul>
+        <li><code>title</code>: Title of the media</li>
+        <li><code>filename</code>: The stored filename</li>
+        <li><code>uploadedAt</code>: Date/time it was uploaded</li>
+      </ul>
+    </li>
+
+    <li><strong>GET <code>/download/:filename</code></strong><br />
+      Downloads the specified media file.<br />
+      Example: <code>/download/image1.jpg</code>
+    </li>
+  </ul>
+
+  <h2>Example Media Metadata Format</h2>
+  <pre><code>[
+  {
+    "title": "Sunset Photo",
+    "filename": "sunset.jpg",
+    "uploadedAt": "2025-04-29T18:20:33.411Z"
+  }
+]</code></pre>
+
+  <p>Created by Katlego Mankga | Mock Media Server Task 2</p>
+
+</body>
+</html>
+
+
